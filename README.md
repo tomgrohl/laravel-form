@@ -7,8 +7,15 @@ This package is a Form Builder & Manager for Laravel 5.8
 Part of the Form package is the Form Manager. This holds all your forms.
 The best way to utilise the manager is to add forms to it through Service Providers.
 
-The easiest way to use the Form Manager is to make sure your Controllers extend
+The easiest way to access the Form Manager is to get it out of the service container using the interface
 `Tomgrohl\Laravel\Form\FormManagerInterface`.
+
+```
+<?php
+
+$manager = app(Tomgrohl\Laravel\Form\FormManagerInterface);
+
+```
 
 
 ## Creating a Form
