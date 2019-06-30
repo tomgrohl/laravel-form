@@ -39,19 +39,252 @@ Form Elements there are and how to add them.
 ### Form Elements
 
 #### Checkbox
+
+The Checkbox class has the following constructor `__construct($name, $value = null, $checked = false)`.
+You can create a new Checkbox element doing the following:
+
+```
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Checkbox;
+
+$form = new Form('/user/create');
+$form->add(new Checkbox('active');
+```
+
 #### Date
+
+The Date class has the following constructor `__construct($name, $value = null)`. 
+The Date Element renders a HTML5 input element with a type of "date".
+You can create a new Date element doing the following:
+
+```
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Date;
+
+$form = new Form('/user/create');
+$form->add(new Date('dob');
+
+```
+
 #### Email
+
+The Email class has the following constructor `__construct($name, $value = null)`
+The Email Element renders a HTML5 input element with a type of "email".
+You can create a new Email element doing the following:
+
+```php
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Email;
+
+$form = new Form('/user/create');
+$form->add(new Email('user_email');
+
+```
+
 #### Hidden
+
+The Hidden class has the following constructor `__construct($name, $value = null)`
+
+The Hidden Element renders a HTML input element with a type of "hidden".
+
+You can create a new Hidden element doing the following:
+
+```php
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Hidden;
+
+$form = new Form('/user/create');
+$form->add(new Hidden('id');
+
+```
+
+
 #### Number
+
+The Number class has the following constructor `__construct($name, $value = null)`
+
+The Number Element renders a HTML5 input element with a type of "text"
+and a pattern attribute set to [0-9]+ for browser compatibility.
+
+You can create a new Number element doing the following:
+
+```php
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Number;
+
+$form = new Form('/user/create');
+$form->add(new Number('count');
+```
+
+
 #### Password
+
+The Password class has the following constructor `__construct($name)`
+
+You can create a new Password element doing the following:
+
+```php
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Password;
+
+$form = new Form('/user/create');
+$form->add(new Password('user_password');
+
+```
+
 #### Phone
+
+The Phone class has the following constructor `__construct($name, $value = null)`.
+
+The Phone Element renders a HTML5 input element with a type of "tel".
+
+You can create a new Phone element doing the following:
+
+```php
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Phone;
+
+$form = new Form('/user/create');
+$form->add(new Phone('telephone');
+
+```
+
 #### Radio
+
+The Radio class has the following constructor `__construct($name, $value = null)`.
+
+You can create a new Radio element doing the following:
+
+```php
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Radio;
+
+$form = new Form('/user/create');
+$form->add(new Radio('gender', 'male'));
+$form->add(new Radio('gender', 'female'));
+
+```
+
 #### Search
+
+The Search class has the following constructor `__construct($name, $value = null)`.
+
+The Search Element renders a HTML5 input element with a type of "search".
+
+You can create a new Search element doing the following:
+
+```php
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Search;
+
+$form = new Form('/user/create');
+$form->add(new Search('site_search');
+```
+
 #### Select
+
+The Select class has the following constructor `__construct($name, array $list = array(), $selected = null)`.
+
+You can create a new Select element doing the following:
+
+
+```php
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Select;
+
+$form = new Form('/user/create');
+$form->add(new Select('title', array('mr' => 'Mr', 'mrs' => 'Mrs'), 'mr'));
+
+```
+
 #### Submit
+
+The Submit class has the following constructor `__construct($name, $value = 'Submit')`.
+
+You can create a new Submit element doing the following:
+
+```php
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Submit;
+
+$form = new Form('/user/create');
+$form->add(new Submit('submit', 'Save');
+
+```
+
 #### Text
+
+The Text class has the following constructor `__construct($name, $value = null)`.
+
+You can create a new Text element doing the following:
+
+```php
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Text;
+
+$form = new Form('/user/create');
+$form->add(new Text('first_name');
+```
+
+
 #### TextArea
+
+The TextArea class has the following constructor `__construct($name, $value = null)`.
+
+You can create a new TextArea element doing the following:
+
+```php
+<?php
+
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\TextArea;
+
+$form = new Form('/user/create');
+$form->add(new TextArea('description');
+
+```
+
 #### Url
+
+The Url class has the following constructor `__construct($name, $value = null)`.
+
+You can create a new Url element doing the following:
+
+```php
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Url;
+
+$form = new Form('/user/create');
+$form->add(new Url('website');
+
+```
 
 ## Data Transformers
 
@@ -87,3 +320,17 @@ $form->addTransformer('dob', new CallableDataTransformer(function($dateTime) {
 ```
 
 ## Example Form
+
+```php
+<?php
+
+use Tomgrohl\Laravel\Form\Form;
+use Tomgrohl\Laravel\Form\Element\Text;
+use Tomgrohl\Laravel\Form\Element\Submit;
+
+$form = new Form('/login', 'POST');
+$form->add(new Text('username'));
+$form->add(new Text('password'));
+$form->add(new Submit('submit', 'Login');
+
+```
