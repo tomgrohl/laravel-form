@@ -1,0 +1,38 @@
+{
+    "name": "tomgrohl/laravel-form",
+    "description": "Laravel Form Library.",
+    "keywords": ["form", "laravel", "library", "package"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Tom Ellis",
+            "email": "tellishtc@gmail.com"
+        }
+    ],
+    "config": {
+        "preferred-install": "dist",
+        "bin-dir": "bin",
+        "process-timeout": 10000,
+        "github-protocols": ["https"]
+    },
+    "require": {
+        "php": ">=7.1.3"
+    },
+    "require-dev": {
+        "laravel/laravel": "^5.8.0",
+        "phpunit/phpunit": "^7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tomgrohl\\Laravel\\Form\\": "src/",
+            "Test": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "stable"
+}
