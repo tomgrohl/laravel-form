@@ -10,10 +10,10 @@ The best way to utilise the manager is to add forms to it through Service Provid
 The easiest way to access the Form Manager is to get it out of the service container using the interface
 `Tomgrohl\Laravel\Form\FormManagerInterface`.
 
-```
+```php
 <?php
 
-$manager = app(Tomgrohl\Laravel\Form\FormManagerInterface);
+$manager = app(\Tomgrohl\Laravel\Form\FormManagerInterface::class);
 
 ```
 
@@ -50,7 +50,7 @@ Form Elements there are and how to add them.
 The Checkbox class has the following constructor `__construct($name, $value = null, $checked = false)`.
 You can create a new Checkbox element doing the following:
 
-```
+```php
 <?php
 
 use Tomgrohl\Laravel\Form\Form;
@@ -66,7 +66,7 @@ The Date class has the following constructor `__construct($name, $value = null)`
 The Date Element renders a HTML5 input element with a type of "date".
 You can create a new Date element doing the following:
 
-```
+```php
 <?php
 
 use Tomgrohl\Laravel\Form\Form;
