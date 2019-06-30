@@ -11,12 +11,21 @@
 
 namespace Tomgrohl\Laravel\Form;
 
-class FormsManager implements FormsManagerInterface
+/**
+ * Class FormManager
+ * @package Tomgrohl\Laravel\Form
+ */
+class FormManager implements FormManagerInterface
 {
     /**
-     * @var Form[]
+     * @var iterable Form
      */
-    protected $forms = array();
+    protected $forms = [];
+
+    public function __construct(iterable $forms = [])
+    {
+        $this->forms = $forms;
+    }
 
     /**
      * @param $name
@@ -52,16 +61,15 @@ class FormsManager implements FormsManagerInterface
      */
     public function clear()
     {
-        $this->forms = array();
+        $this->forms = [];
         return $this;
     }
 
     /**
-     * @return array
+     * @return iterable
      */
     public function getAll()
     {
         return $this->forms;
     }
-
 }

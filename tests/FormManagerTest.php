@@ -2,19 +2,19 @@
 
 use PHPUnit\Framework\TestCase;
 use Tomgrohl\Laravel\Form\Form;
-use Tomgrohl\Laravel\Form\FormsManager;
+use Tomgrohl\Laravel\Form\FormManager;
 use Tomgrohl\Laravel\Form\Test\TestForm;
 
 class FormManagerTes2t extends TestCase
 {
     /**
-     * @var \Tomgrohl\Laravel\Form\FormsManager
+     * @var \Tomgrohl\Laravel\Form\FormManager
      */
     protected $formManager;
 
     public function setUp()
     {
-        $this->formManager = new FormsManager();
+        $this->formManager = new FormManager();
     }
 
     public function testFormAdding()

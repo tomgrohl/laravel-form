@@ -11,9 +11,12 @@
 
 namespace Tomgrohl\Laravel\Form;
 
-interface FormsManagerInterface
+/**
+ * Interface FormManagerInterface
+ * @package Tomgrohl\Laravel\Form
+ */
+interface FormManagerInterface
 {
-
     /**
      * @param $name
      * @param FormInterface $form
