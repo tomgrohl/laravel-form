@@ -8,11 +8,9 @@ use Tomgrohl\Laravel\Form\DataTransformerInterface;
 
 class FormDataTransformerTest extends TestCase
 {
-    /**
-     * @expectedException \Tomgrohl\Laravel\Form\Exception\InvalidDataTransformerException
-     */
     public function testAddingInvalidTransformerThrowsException()
     {
+        $this->expectException('\Tomgrohl\Laravel\Form\Exception\InvalidDataTransformerException');
         $form = new Form('/');
         $form->addTransformers(array(
             'foo' => 'invalidTranformer'

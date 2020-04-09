@@ -1,6 +1,6 @@
 # Laravel Form Package
 
-This package is a Form Builder & Manager for Laravel 5.8
+This package is a Form Builder & Manager for Laravel 6 & 7
 
 ## Form Manager
 
@@ -220,7 +220,7 @@ use Tomgrohl\Laravel\Form\Form;
 use Tomgrohl\Laravel\Form\Element\Select;
 
 $form = new Form('/user/create');
-$form->add(new Select('title', array('mr' => 'Mr', 'mrs' => 'Mrs'), 'mr'));
+$form->add(new Select('title', ['mr' => 'Mr', 'mrs' => 'Mrs'], 'mr'));
 
 ```
 

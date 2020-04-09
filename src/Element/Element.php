@@ -4,7 +4,10 @@ namespace Tomgrohl\Laravel\Form\Element;
 
 use Tomgrohl\Laravel\Form\AttributeBuilder;
 
-abstract class Element extends AttributeBuilder
+/**
+ * Element class
+ */
+abstract class Element extends AttributeBuilder implements ElementInterface
 {
     /**
      * Name of element

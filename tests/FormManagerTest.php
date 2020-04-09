@@ -5,14 +5,14 @@ use Tomgrohl\Laravel\Form\Form;
 use Tomgrohl\Laravel\Form\FormManager;
 use Tomgrohl\Laravel\Form\Test\TestForm;
 
-class FormManagerTes2t extends TestCase
+class FormManagerTest extends TestCase
 {
     /**
      * @var \Tomgrohl\Laravel\Form\FormManager
      */
     protected $formManager;
 
-    public function setUp()
+    protected function setUp() : void
     {
         $this->formManager = new FormManager();
     }
